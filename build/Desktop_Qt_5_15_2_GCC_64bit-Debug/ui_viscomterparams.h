@@ -97,7 +97,7 @@ public:
         ViscomterParams->resize(1024, 768);
         tabWidget = new QTabWidget(ViscomterParams);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(290, 40, 371, 511));
+        tabWidget->setGeometry(QRect(390, 180, 371, 511));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
         pushButton = new QPushButton(tab);
@@ -364,7 +364,7 @@ public:
         tabWidget->addTab(tab_4, QString());
         boxWidget = new QWidget(ViscomterParams);
         boxWidget->setObjectName(QString::fromUtf8("boxWidget"));
-        boxWidget->setGeometry(QRect(240, 10, 461, 571));
+        boxWidget->setGeometry(QRect(350, 150, 451, 571));
         boxWidget->setStyleSheet(QString::fromUtf8("#boxWidget {\n"
 "background: #fff;\n"
 "border-radius: 10px;\n"

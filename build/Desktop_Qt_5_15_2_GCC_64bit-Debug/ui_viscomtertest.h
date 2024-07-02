@@ -53,7 +53,7 @@ public:
         ViscomterTest->setStyleSheet(QString::fromUtf8(""));
         boxWidget = new QWidget(ViscomterTest);
         boxWidget->setObjectName(QString::fromUtf8("boxWidget"));
-        boxWidget->setGeometry(QRect(350, 80, 341, 471));
+        boxWidget->setGeometry(QRect(340, 150, 341, 471));
         boxWidget->setStyleSheet(QString::fromUtf8("#boxWidget {\n"
 "background: #fff;\n"
 "border-radius: 10px\n"

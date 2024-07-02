@@ -62,7 +62,7 @@ public:
         ParticleCounterParams->resize(1024, 768);
         boxWidget = new QWidget(ParticleCounterParams);
         boxWidget->setObjectName(QString::fromUtf8("boxWidget"));
-        boxWidget->setGeometry(QRect(350, 80, 391, 413));
+        boxWidget->setGeometry(QRect(340, 150, 391, 413));
         boxWidget->setStyleSheet(QString::fromUtf8("#boxWidget{\n"
 "background: #fff;\n"
 "border-radius: 10px\n"
