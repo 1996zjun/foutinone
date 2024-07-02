@@ -58,14 +58,22 @@ ViscomterModule::ViscomterModule(QWidget *parent) : QWidget(parent)
     connect(parameterSettingButton, &QPushButton::clicked, this, &ViscomterModule::on_parameterSettingButtonClicked);
 }
 
+#include "viscomtertest.h"
 void ViscomterModule::on_sampleDetectionButtonClicked()
 {
+    ViscomterTest *vistest = new ViscomterTest()
+    vistest->show()
+    this.close()
     // 在此处编写跳转到样品检测新界面的代码
-    QMessageBox::information(this, "跳转", "跳转到样品检测界面");
+    // QMessageBox::information(this, "跳转", "跳转到样品检测界面");
 }
 
+#include "viscomterparams.h"
 void ViscomterModule::on_parameterSettingButtonClicked()
 {
+    ViscomterParams *visparams = new ViscomterParams()
+    visparams->show()
+    this->close()
     // 在此处编写跳转到参数设置新界面的代码
     QMessageBox::information(this, "跳转", "跳转到参数设置界面");
 }

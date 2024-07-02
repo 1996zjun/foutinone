@@ -51,29 +51,43 @@ StepOne::StepOne(QWidget *parent) : QWidget(parent)
     connect(systemBtn, &QPushButton::clicked, this, &StepOne::on_systemBtn_clicked);
 }
 
+#include "viscomtermodule.h"
 void StepOne::on_button1_clicked()
 {
-    QMessageBox::information(this, "提示", "您点击了粘度仪功能按钮");
+    // QMessageBox::information(this, "提示", "您点击了粘度仪功能按钮");
+    ViscomterModule *vmodule = new ViscomterModule();
+    vmodule->show();
+    this->close();
 }
 
+#include "particlecountermodule.h"
 void StepOne::on_button2_clicked()
 {
-    QMessageBox::information(this, "提示", "您点击了颗粒计数器按钮");
+    // QMessageBox::information(this, "提示", "您点击了颗粒计数器按钮");
+    ParticleCounterModule *pmodule = new ParticleCounterModule();
+    pmodule->show();
+    this->close();
 }
 
 void StepOne::on_button3_clicked()
 {
+    
     QMessageBox::information(this, "提示", "您点击了 X 荧光检测按钮");
 }
 
+#include "mainwindow.h"
 void StepOne::on_button4_clicked()
 {
-    QMessageBox::information(this, "提示", "您点击了红外检测按钮");
+
+    // QMessageBox::information(this, "提示", "您点击了红外检测按钮");
+    MainWindow *mainwindow = new MainWindow()
+    mainwindow->show()
+    this->close()
 }
 
 
 void StepOne::on_historyBtn_clicked()
-{
+{   
     QMessageBox::information(this, "提示", "您点击了历史记录");
 }
 

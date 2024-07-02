@@ -57,14 +57,28 @@ ParticleCounterModule::ParticleCounterModule(QWidget *parent) : QWidget(parent)
     connect(parameterSettingButton, &QPushButton::clicked, this, &ParticleCounterModule::on_parameterSettingButtonClicked);
 }
 
+
+#include "particlecountertest.h"
 void ParticleCounterModule::on_sampleDetectionButtonClicked()
 {
     // 在此处编写跳转到样品检测新界面的代码
-    QMessageBox::information(this, "跳转", "跳转到样品检测界面");
+    // QMessageBox::information(this, "跳转", "跳转到样品检测界面");、
+
+    ParticleCounterTest *parttest = new ParticleCounterTest()
+    parttest->show()
+
+    this.close()
 }
 
+
+#include "particlecounterparams.h"
 void ParticleCounterModule::on_parameterSettingButtonClicked()
 {
     // 在此处编写跳转到参数设置新界面的代码
-    QMessageBox::information(this, "跳转", "跳转到参数设置界面");
+    // QMessageBox::information(this, "跳转", "跳转到参数设置界面");
+
+    ParticleCounterParams *partParams = new ParticleCounterParams()
+    partParams->show()
+
+    this.close()
 }
