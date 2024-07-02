@@ -2,7 +2,7 @@
 #define VISCOMTERPARAMS_H
 
 #include <QWidget>
-
+#include <QPainter>
 namespace Ui {
 class ViscomterParams;
 }
@@ -14,6 +14,11 @@ class ViscomterParams : public QWidget
 public:
     explicit ViscomterParams(QWidget *parent = nullptr);
     ~ViscomterParams();
+    void paintEvent(QPaintEvent *event);
+
+private slots:
+    void on_backButton_clicked();
+
 
 private:
     Ui::ViscomterParams *ui;

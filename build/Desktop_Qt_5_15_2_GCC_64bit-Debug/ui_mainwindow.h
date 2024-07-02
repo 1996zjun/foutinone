@@ -438,7 +438,7 @@ public:
         pushButton->setText(QCoreApplication::translate("MainWindow", "\345\257\274\345\205\245\347\224\250\346\210\267\346\225\260\346\215\256", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "\345\257\274\345\207\272\347\224\250\346\210\267\346\225\260\346\215\256", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "\346\201\242\345\244\215\345\207\272\345\216\202\351\205\215\347\275\256", nullptr));
-        logoutButton->setText(QCoreApplication::translate("MainWindow", "Logout", nullptr));
+        logoutButton->setText(QCoreApplication::translate("MainWindow", "\350\277\224\345\233\236", nullptr));
         testButton->setText(QCoreApplication::translate("MainWindow", "\345\274\200\345\247\213\346\243\200\346\265\213", nullptr));
     } // retranslateUi
 

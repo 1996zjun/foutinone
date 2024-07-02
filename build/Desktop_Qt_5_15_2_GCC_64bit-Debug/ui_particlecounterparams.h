@@ -53,7 +53,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
+    QPushButton *backButton;
 
     void setupUi(QWidget *ParticleCounterParams)
     {
@@ -156,10 +156,11 @@ public:
         pushButton_3->setGeometry(QRect(140, 350, 51, 41));
         pushButton_4 = new QPushButton(widget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(230, 350, 80, 41));
-        pushButton_5 = new QPushButton(widget);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setGeometry(QRect(320, 350, 60, 41));
+        pushButton_4->setGeometry(QRect(280, 350, 80, 41));
+        backButton = new QPushButton(ParticleCounterParams);
+        backButton->setObjectName(QString::fromUtf8("backButton"));
+        backButton->setGeometry(QRect(10, 10, 100, 50));
+        backButton->setStyleSheet(QString::fromUtf8("QPushButton { background: #FF6347; color: #fff; font-weight: bold; }"));
 
         retranslateUi(ParticleCounterParams);
 
@@ -190,7 +191,7 @@ public:
         pushButton_2->setText(QCoreApplication::translate("ParticleCounterParams", "+", nullptr));
         pushButton_3->setText(QCoreApplication::translate("ParticleCounterParams", "-", nullptr));
         pushButton_4->setText(QCoreApplication::translate("ParticleCounterParams", "\344\277\235\345\255\230", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("ParticleCounterParams", "\350\277\224\345\233\236", nullptr));
+        backButton->setText(QCoreApplication::translate("ParticleCounterParams", "\350\277\224\345\233\236", nullptr));
     } // retranslateUi
 
 };

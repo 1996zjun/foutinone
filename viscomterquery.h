@@ -2,7 +2,7 @@
 #define VISCOMTERQUERY_H
 
 #include <QWidget>
-
+#include <QPainter>
 namespace Ui {
 class ViscomterQuery;
 }
@@ -14,9 +14,13 @@ class ViscomterQuery : public QWidget
 public:
     explicit ViscomterQuery(QWidget *parent = nullptr);
     ~ViscomterQuery();
+    void paintEvent(QPaintEvent *event);
+
 
 private:
     Ui::ViscomterQuery *ui;
 };
+
+
 
 #endif // VISCOMTERQUERY_H

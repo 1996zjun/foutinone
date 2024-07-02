@@ -2,11 +2,7 @@
 #define PARTICLECOUNTERMODULE_H
 
 #include <QWidget>
-#include <QVBoxLayout>
 #include <QPushButton>
-#include <QImage>
-#include <QPixmap>
-#include <QLabel>
 
 class ParticleCounterModule : public QWidget
 {
@@ -18,11 +14,11 @@ public:
 private slots:
     void on_sampleDetectionButtonClicked();
     void on_parameterSettingButtonClicked();
+    void on_backButtonClicked();
 
 private:
     QPushButton *sampleDetectionButton;
     QPushButton *parameterSettingButton;
-    QLabel *toplabel;
 };
 
 #endif // PARTICLECOUNTERMODULE_H

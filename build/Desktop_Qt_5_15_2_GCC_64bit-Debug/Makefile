@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = clang
 CXX           = clang++
-DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_QML_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++1z -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../../../fourInOne -I. -I../../../../qt_5_15/5.15.2/gcc_64/include -I../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets -I../../../../qt_5_15/5.15.2/gcc_64/include/QtGui -I../../../../qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/libdrm -I. -I../../../../qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang
+INCPATH       = -I../../../fourInOne -I. -I../../../../qt_5_15/5.15.2/gcc_64/include -I../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts -I../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets -I../../../../qt_5_15/5.15.2/gcc_64/include/QtGui -I../../../../qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/libdrm -I. -I../../../../qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang
 QMAKE         = /home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = foutInOne1.0.0
 DISTDIR = /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/.tmp/foutInOne1.0.0
 LINK          = clang++
 LFLAGS        = -ccc-gcc-name g++ -Wl,-rpath,/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/lib
-LIBS          = $(SUBLIBS) /home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/lib/libQt5Widgets.so /home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/lib/libQt5Gui.so /home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/lib/libQt5Core.so -lGL -lpthread   
+LIBS          = $(SUBLIBS) /home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/lib/libQt5Charts.so /home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/lib/libQt5Widgets.so /home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/lib/libQt5Gui.so /home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/lib/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -131,10 +131,14 @@ DIST          = /home/qt_5_15/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_charts.pri \
+		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_charts_private.pri \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_concurrent.pri \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_core.pri \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_core_private.pri \
+		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_datavisualization.pri \
+		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_dbus.pri \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_designer.pri \
@@ -338,10 +342,14 @@ Makefile: ../../foutInOne.pro ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/features
 		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri \
 		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
 		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_charts.pri \
+		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_charts_private.pri \
 		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_concurrent.pri \
 		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri \
 		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_core.pri \
 		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_core_private.pri \
+		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_datavisualization.pri \
+		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
 		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_dbus.pri \
 		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri \
 		../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_designer.pri \
@@ -517,10 +525,14 @@ Makefile: ../../foutInOne.pro ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/features
 ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri:
 ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
 ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
+../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_charts.pri:
+../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_charts_private.pri:
 ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_concurrent.pri:
 ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri:
 ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_core.pri:
 ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_core_private.pri:
+../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_datavisualization.pri:
+../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_datavisualization_private.pri:
 ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_dbus.pri:
 ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri:
 ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/modules/qt_lib_designer.pri:
@@ -838,7 +850,7 @@ moc_StepOne.cpp: ../../StepOne.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../StepOne.h -o moc_StepOne.cpp
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../StepOne.h -o moc_StepOne.cpp
 
 moc_loginwindow.cpp: ../../loginwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -953,7 +965,7 @@ moc_loginwindow.cpp: ../../loginwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../loginwindow.h -o moc_loginwindow.cpp
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../loginwindow.h -o moc_loginwindow.cpp
 
 moc_mainwindow.cpp: ../../mainwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -1062,9 +1074,46 @@ moc_mainwindow.cpp: ../../mainwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChartView \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchartview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QAbstractAxis \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qabstractaxis.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChartGlobal \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchartglobal.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QtGlobal \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPen \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QFont \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QVariant \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QAbstractSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qabstractseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QObject \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChart \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchart.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QLegend \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlegend.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QGraphicsWidget \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicswidget.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainterpath.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QBrush \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QMargins \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QLineSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlineseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QXYSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qxyseries.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../mainwindow.h -o moc_mainwindow.cpp
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../mainwindow.h -o moc_mainwindow.cpp
 
 moc_particlecountermodule.cpp: ../../particlecountermodule.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1186,7 +1235,7 @@ moc_particlecountermodule.cpp: ../../particlecountermodule.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../particlecountermodule.h -o moc_particlecountermodule.cpp
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../particlecountermodule.h -o moc_particlecountermodule.cpp
 
 moc_particlecounterparams.cpp: ../../particlecounterparams.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1294,7 +1343,7 @@ moc_particlecounterparams.cpp: ../../particlecounterparams.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../particlecounterparams.h -o moc_particlecounterparams.cpp
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../particlecounterparams.h -o moc_particlecounterparams.cpp
 
 moc_particlecountertest.cpp: ../../particlecountertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1402,7 +1451,7 @@ moc_particlecountertest.cpp: ../../particlecountertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../particlecountertest.h -o moc_particlecountertest.cpp
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../particlecountertest.h -o moc_particlecountertest.cpp
 
 moc_viscomtermodule.cpp: ../../viscomtermodule.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1524,7 +1573,7 @@ moc_viscomtermodule.cpp: ../../viscomtermodule.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomtermodule.h -o moc_viscomtermodule.cpp
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomtermodule.h -o moc_viscomtermodule.cpp
 
 moc_viscomterparams.cpp: ../../viscomterparams.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1632,7 +1681,7 @@ moc_viscomterparams.cpp: ../../viscomterparams.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomterparams.h -o moc_viscomterparams.cpp
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomterparams.h -o moc_viscomterparams.cpp
 
 moc_viscomterquery.cpp: ../../viscomterquery.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1740,7 +1789,7 @@ moc_viscomterquery.cpp: ../../viscomterquery.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomterquery.h -o moc_viscomterquery.cpp
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomterquery.h -o moc_viscomterquery.cpp
 
 moc_viscomtertest.cpp: ../../viscomtertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1848,7 +1897,7 @@ moc_viscomtertest.cpp: ../../viscomtertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomtertest.h -o moc_viscomtertest.cpp
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomtertest.h -o moc_viscomtertest.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -2012,7 +2061,52 @@ StepOne.o: ../../StepOne.cpp ../../StepOne.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPixmap \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
+		../../viscomtermodule.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		../../particlecountermodule.h \
+		../../mainwindow.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChartView \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchartview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QAbstractAxis \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qabstractaxis.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChartGlobal \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchartglobal.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QtGlobal \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPen \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QFont \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QVariant \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QAbstractSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qabstractseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QObject \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChart \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchart.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QLegend \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlegend.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QGraphicsWidget \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicswidget.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainterpath.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QBrush \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QMargins \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QLineSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlineseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QXYSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qxyseries.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o StepOne.o ../../StepOne.cpp
 
 loginwindow.o: ../../loginwindow.cpp ../../loginwindow.h \
@@ -2154,6 +2248,38 @@ loginwindow.o: ../../loginwindow.cpp ../../loginwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
 		../../mainwindow.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChartView \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchartview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QAbstractAxis \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qabstractaxis.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChartGlobal \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchartglobal.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QtGlobal \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPen \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QFont \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QAbstractSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qabstractseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QObject \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChart \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchart.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QLegend \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlegend.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QGraphicsWidget \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicswidget.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainterpath.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QBrush \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QMargins \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QLineSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlineseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QXYSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qxyseries.h \
 		../../StepOne.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QImage \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPixmap \
@@ -2412,8 +2538,44 @@ mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
-		ui_mainwindow.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChartView \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchartview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QAbstractAxis \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qabstractaxis.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChartGlobal \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchartglobal.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QtGlobal \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPen \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QFont \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QVariant \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QAbstractSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qabstractseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QObject \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QChart \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qchart.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QLegend \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlegend.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QGraphicsWidget \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicswidget.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainterpath.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QBrush \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QMargins \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QLineSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlineseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QXYSeries \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qxyseries.h \
+		ui_mainwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QApplication \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qapplication.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
@@ -2421,13 +2583,30 @@ mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qinputmethod.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvalidator.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qregularexpression.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qslider.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qstyle.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qrubberband.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QTableWidget \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtablewidget.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtableview.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
@@ -2555,7 +2734,9 @@ particlecountermodule.o: ../../particlecountermodule.cpp ../../particlecountermo
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
+		../../particlecountertest.h \
+		../../particlecounterparams.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o particlecountermodule.o ../../particlecountermodule.cpp
 
 particlecounterparams.o: ../../particlecounterparams.cpp ../../particlecounterparams.h \
@@ -2799,16 +2980,14 @@ particlecountertest.o: ../../particlecountertest.cpp ../../particlecountertest.h
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qinputmethod.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QDateTimeEdit \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdatetimeedit.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qdatetime.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcalendar.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvalidator.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qregularexpression.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QFrame \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o particlecountertest.o ../../particlecountertest.cpp
 
 viscomtermodule.o: ../../viscomtermodule.cpp ../../viscomtermodule.h \
@@ -2932,7 +3111,9 @@ viscomtermodule.o: ../../viscomtermodule.cpp ../../viscomtermodule.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
+		../../viscomtertest.h \
+		../../viscomterparams.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viscomtermodule.o ../../viscomtermodule.cpp
 
 viscomterparams.o: ../../viscomterparams.cpp ../../viscomterparams.h \

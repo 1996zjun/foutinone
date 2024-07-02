@@ -30,6 +30,8 @@ void LoginWindow::on_loginButton_clicked()
     if (username == "user" && password == "123456") {
         StepOne *stepone = new StepOne();
         stepone->show();
+        // MainWindow *mainwindow = new MainWindow();
+        // mainwindow->show();
         this->close();
     } else {
         QMessageBox::warning(this, "Login Failed", "cuowu le ");

@@ -41,18 +41,19 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
     QLabel *label_11;
+    QPushButton *backButton;
 
     void setupUi(QWidget *ViscomterTest)
     {
         if (ViscomterTest->objectName().isEmpty())
             ViscomterTest->setObjectName(QString::fromUtf8("ViscomterTest"));
-        ViscomterTest->resize(825, 574);
+        ViscomterTest->resize(1024, 768);
         ViscomterTest->setAutoFillBackground(false);
+        ViscomterTest->setStyleSheet(QString::fromUtf8(""));
         widget = new QWidget(ViscomterTest);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(230, 30, 331, 471));
+        widget->setGeometry(QRect(320, 60, 341, 471));
         widget->setStyleSheet(QString::fromUtf8("background: #fff;"));
         label = new QLabel(widget);
         label->setObjectName(QString::fromUtf8("label"));
@@ -107,16 +108,17 @@ public:
         pushButton->setGeometry(QRect(30, 360, 281, 41));
         pushButton_2 = new QPushButton(widget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(30, 410, 71, 41));
+        pushButton_2->setGeometry(QRect(30, 410, 140, 41));
         pushButton_3 = new QPushButton(widget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(110, 410, 71, 41));
-        pushButton_4 = new QPushButton(widget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(220, 410, 91, 41));
+        pushButton_3->setGeometry(QRect(180, 410, 130, 41));
         label_11 = new QLabel(widget);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(20, 20, 67, 17));
+        backButton = new QPushButton(ViscomterTest);
+        backButton->setObjectName(QString::fromUtf8("backButton"));
+        backButton->setGeometry(QRect(20, 10, 100, 50));
+        backButton->setStyleSheet(QString::fromUtf8("QPushButton { background: #FF6347; color: #fff; font-weight: bold; }"));
 
         retranslateUi(ViscomterTest);
 
@@ -139,8 +141,8 @@ public:
         pushButton->setText(QCoreApplication::translate("ViscomterTest", "\346\265\213\350\257\225", nullptr));
         pushButton_2->setText(QCoreApplication::translate("ViscomterTest", "\347\273\210\346\255\242", nullptr));
         pushButton_3->setText(QCoreApplication::translate("ViscomterTest", "\346\270\205\346\264\227", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("ViscomterTest", "\350\277\224\345\233\236", nullptr));
         label_11->setText(QCoreApplication::translate("ViscomterTest", "\347\262\230\345\272\246\346\265\213\350\257\225", nullptr));
+        backButton->setText(QCoreApplication::translate("ViscomterTest", "\350\277\224\345\233\236", nullptr));
     } // retranslateUi
 
 };

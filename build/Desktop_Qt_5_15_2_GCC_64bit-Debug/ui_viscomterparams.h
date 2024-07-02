@@ -88,12 +88,13 @@ public:
     QPushButton *pushButton_7;
     QPushButton *pushButton_8;
     QWidget *widget;
+    QPushButton *backButton;
 
     void setupUi(QWidget *ViscomterParams)
     {
         if (ViscomterParams->objectName().isEmpty())
             ViscomterParams->setObjectName(QString::fromUtf8("ViscomterParams"));
-        ViscomterParams->resize(899, 644);
+        ViscomterParams->resize(1024, 768);
         tabWidget = new QTabWidget(ViscomterParams);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setGeometry(QRect(290, 40, 371, 511));
@@ -293,8 +294,13 @@ public:
         widget->setObjectName(QString::fromUtf8("widget"));
         widget->setGeometry(QRect(240, 10, 461, 571));
         widget->setStyleSheet(QString::fromUtf8("background: #fff;"));
+        backButton = new QPushButton(ViscomterParams);
+        backButton->setObjectName(QString::fromUtf8("backButton"));
+        backButton->setGeometry(QRect(20, 10, 100, 50));
+        backButton->setStyleSheet(QString::fromUtf8("QPushButton { background: #FF6347; color: #fff; font-weight: bold; }"));
         widget->raise();
         tabWidget->raise();
+        backButton->raise();
 
         retranslateUi(ViscomterParams);
 
@@ -341,6 +347,7 @@ public:
         pushButton_7->setText(QCoreApplication::translate("ViscomterParams", "80\302\260C", nullptr));
         pushButton_8->setText(QCoreApplication::translate("ViscomterParams", "100\302\260C", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("ViscomterParams", "\347\262\230\345\272\246\345\270\270\346\225\260", nullptr));
+        backButton->setText(QCoreApplication::translate("ViscomterParams", "\350\277\224\345\233\236", nullptr));
     } // retranslateUi
 
 };

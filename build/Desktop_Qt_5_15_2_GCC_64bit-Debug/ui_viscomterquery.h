@@ -41,8 +41,8 @@ public:
     QLabel *label_10;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
     QLabel *label_11;
+    QPushButton *backButton;
 
     void setupUi(QWidget *ViscomterQuery)
     {
@@ -103,20 +103,21 @@ public:
         label_10->setGeometry(QRect(240, 250, 67, 17));
         pushButton_2 = new QPushButton(widget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(30, 380, 71, 41));
+        pushButton_2->setGeometry(QRect(80, 400, 71, 41));
         QIcon icon(QIcon::fromTheme(QString::fromUtf8("go-previous")));
         pushButton_2->setIcon(icon);
         pushButton_3 = new QPushButton(widget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(110, 380, 71, 41));
+        pushButton_3->setGeometry(QRect(200, 400, 71, 41));
         QIcon icon1(QIcon::fromTheme(QString::fromUtf8("go-next")));
         pushButton_3->setIcon(icon1);
-        pushButton_4 = new QPushButton(widget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(220, 380, 91, 41));
         label_11 = new QLabel(widget);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(10, 10, 67, 17));
+        backButton = new QPushButton(ViscomterQuery);
+        backButton->setObjectName(QString::fromUtf8("backButton"));
+        backButton->setGeometry(QRect(10, 10, 100, 50));
+        backButton->setStyleSheet(QString::fromUtf8("QPushButton { background: #FF6347; color: #fff; font-weight: bold; }"));
 
         retranslateUi(ViscomterQuery);
 
@@ -138,8 +139,8 @@ public:
         label_10->setText(QCoreApplication::translate("ViscomterQuery", "\302\260C", nullptr));
         pushButton_2->setText(QString());
         pushButton_3->setText(QString());
-        pushButton_4->setText(QCoreApplication::translate("ViscomterQuery", "\350\277\224\345\233\236", nullptr));
         label_11->setText(QCoreApplication::translate("ViscomterQuery", "\346\225\260\346\215\256\346\237\245\350\257\242", nullptr));
+        backButton->setText(QCoreApplication::translate("ViscomterQuery", "\350\277\224\345\233\236", nullptr));
     } // retranslateUi
 
 };

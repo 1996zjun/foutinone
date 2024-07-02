@@ -692,7 +692,7 @@ font-style: normal;</string>
     </rect>
    </property>
    <property name="text">
-    <string>Logout</string>
+    <string>返回</string>
    </property>
   </widget>
   <widget class="QPushButton" name="testButton">

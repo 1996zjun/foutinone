@@ -44,6 +44,7 @@ public:
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
     QPushButton *pushButton_7;
+    QPushButton *backButton;
 
     void setupUi(QWidget *ParticleCounterTest)
     {
@@ -141,6 +142,10 @@ public:
         pushButton_7 = new QPushButton(widget_3);
         pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
         pushButton_7->setGeometry(QRect(180, 340, 70, 40));
+        backButton = new QPushButton(ParticleCounterTest);
+        backButton->setObjectName(QString::fromUtf8("backButton"));
+        backButton->setGeometry(QRect(20, 10, 100, 50));
+        backButton->setStyleSheet(QString::fromUtf8("QPushButton { background: #FF6347; color: #fff; font-weight: bold; }"));
 
         retranslateUi(ParticleCounterTest);
 
@@ -167,6 +172,7 @@ public:
         pushButton_5->setText(QCoreApplication::translate("ParticleCounterTest", "\344\270\212\344\270\200\346\254\241", nullptr));
         pushButton_6->setText(QCoreApplication::translate("ParticleCounterTest", "\350\277\224\345\233\236", nullptr));
         pushButton_7->setText(QCoreApplication::translate("ParticleCounterTest", "\344\270\213\344\270\200\346\254\241", nullptr));
+        backButton->setText(QCoreApplication::translate("ParticleCounterTest", "\350\277\224\345\233\236", nullptr));
     } // retranslateUi
 
 };

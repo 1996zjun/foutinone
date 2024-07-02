@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "StepOne.h"
 #include <QMessageBox>
 
+#include <QPainter>
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),
@@ -50,6 +52,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::paintEvent(QPaintEvent *event)
+{
+    QPainter painter(this);
+    painter.drawPixmap(0,0,width(),height(),QPixmap(":/images/bg.png"));
+}
+
+
 void MainWindow::on_testButton_clicked()
 {
     QMessageBox::information(this, "Test", "Test button clisssssssssssssssssscked");
@@ -57,6 +66,8 @@ void MainWindow::on_testButton_clicked()
 
 void MainWindow::on_logoutButton_clicked()
 {
-    emit logout();
+
+    StepOne *stepOne = new StepOne();
+    stepOne->show();
     this->close();
 }
