@@ -21,7 +21,7 @@ QT_BEGIN_NAMESPACE
 class Ui_ParticleCounterTest
 {
 public:
-    QWidget *widget;
+    QWidget *boxWidget;
     QWidget *widget_2;
     QLabel *label;
     QLabel *label_2;
@@ -32,7 +32,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
-    QWidget *widget_3;
+    QWidget *boxWidget2;
     QWidget *widget_4;
     QLabel *label_6;
     QLabel *label_7;
@@ -51,11 +51,14 @@ public:
         if (ParticleCounterTest->objectName().isEmpty())
             ParticleCounterTest->setObjectName(QString::fromUtf8("ParticleCounterTest"));
         ParticleCounterTest->resize(1024, 768);
-        widget = new QWidget(ParticleCounterTest);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(30, 120, 421, 391));
-        widget->setStyleSheet(QString::fromUtf8("background: #fff;"));
-        widget_2 = new QWidget(widget);
+        boxWidget = new QWidget(ParticleCounterTest);
+        boxWidget->setObjectName(QString::fromUtf8("boxWidget"));
+        boxWidget->setGeometry(QRect(30, 120, 421, 391));
+        boxWidget->setStyleSheet(QString::fromUtf8("#boxWidget {\n"
+"background: #fff;\n"
+"border-radius: 10px\n"
+"}"));
+        widget_2 = new QWidget(boxWidget);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         widget_2->setGeometry(QRect(10, 10, 400, 60));
         widget_2->setStyleSheet(QString::fromUtf8(""));
@@ -73,36 +76,66 @@ public:
         line->setGeometry(QRect(0, 50, 401, 16));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(boxWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(20, 80, 41, 31));
         QFont font1;
         font1.setPointSize(15);
         label_3->setFont(font1);
-        label_4 = new QLabel(widget);
+        label_4 = new QLabel(boxWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(20, 120, 101, 40));
         QFont font2;
         font2.setPointSize(30);
         label_4->setFont(font2);
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(boxWidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(20, 200, 371, 31));
         label_5->setFont(font1);
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(boxWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(20, 330, 91, 51));
-        pushButton_2 = new QPushButton(widget);
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
+        pushButton_2 = new QPushButton(boxWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(120, 330, 91, 51));
-        pushButton_3 = new QPushButton(widget);
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
+        pushButton_3 = new QPushButton(boxWidget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(320, 330, 91, 51));
-        widget_3 = new QWidget(ParticleCounterTest);
-        widget_3->setObjectName(QString::fromUtf8("widget_3"));
-        widget_3->setGeometry(QRect(500, 120, 421, 391));
-        widget_3->setStyleSheet(QString::fromUtf8("background: #fff;"));
-        widget_4 = new QWidget(widget_3);
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #E0EBFC;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #005AE7;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
+        boxWidget2 = new QWidget(ParticleCounterTest);
+        boxWidget2->setObjectName(QString::fromUtf8("boxWidget2"));
+        boxWidget2->setGeometry(QRect(500, 120, 421, 391));
+        boxWidget2->setStyleSheet(QString::fromUtf8("#boxWidget2{\n"
+"background: #fff;\n"
+"border-radius: 10px\n"
+"}"));
+        widget_4 = new QWidget(boxWidget2);
         widget_4->setObjectName(QString::fromUtf8("widget_4"));
         widget_4->setGeometry(QRect(10, 10, 400, 60));
         widget_4->setStyleSheet(QString::fromUtf8(""));
@@ -122,26 +155,53 @@ public:
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setGeometry(QRect(170, 20, 41, 31));
         label_8->setFont(font1);
-        label_9 = new QLabel(widget_3);
+        label_9 = new QLabel(boxWidget2);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(20, 120, 101, 40));
         label_9->setFont(font2);
-        label_10 = new QLabel(widget_3);
+        label_10 = new QLabel(boxWidget2);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(20, 290, 371, 31));
         label_10->setFont(font1);
-        pushButton_4 = new QPushButton(widget_3);
+        pushButton_4 = new QPushButton(boxWidget2);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(20, 340, 70, 40));
-        pushButton_5 = new QPushButton(widget_3);
+        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
+        pushButton_5 = new QPushButton(boxWidget2);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setGeometry(QRect(100, 340, 70, 40));
-        pushButton_6 = new QPushButton(widget_3);
+        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
+        pushButton_6 = new QPushButton(boxWidget2);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         pushButton_6->setGeometry(QRect(320, 340, 91, 40));
-        pushButton_7 = new QPushButton(widget_3);
+        pushButton_7 = new QPushButton(boxWidget2);
         pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
         pushButton_7->setGeometry(QRect(180, 340, 70, 40));
+        pushButton_7->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         backButton = new QPushButton(ParticleCounterTest);
         backButton->setObjectName(QString::fromUtf8("backButton"));
         backButton->setGeometry(QRect(20, 10, 100, 50));

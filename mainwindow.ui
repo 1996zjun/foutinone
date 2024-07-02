@@ -25,6 +25,9 @@
      <height>521</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F2F3F5;</string>
+   </property>
    <property name="tabPosition">
     <enum>QTabWidget::North</enum>
    </property>
@@ -32,7 +35,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <property name="elideMode">
     <enum>Qt::ElideNone</enum>
@@ -229,6 +232,17 @@
        <width>89</width>
        <height>40</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
      </property>
      <property name="text">
       <string>保存</string>
@@ -427,6 +441,17 @@
        <width>89</width>
        <height>40</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
      </property>
      <property name="text">
       <string>保存</string>
@@ -686,10 +711,13 @@ font-style: normal;</string>
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>510</y>
-     <width>101</width>
-     <height>31</height>
+     <y>500</y>
+     <width>81</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #FF6347; color: #fff; font-weight: bold;</string>
    </property>
    <property name="text">
     <string>返回</string>

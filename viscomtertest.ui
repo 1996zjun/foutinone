@@ -19,17 +19,20 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QWidget" name="widget" native="true">
+  <widget class="QWidget" name="boxWidget" native="true">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>60</y>
+     <x>340</x>
+     <y>150</y>
      <width>341</width>
      <height>471</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background: #fff;</string>
+    <string notr="true">#boxWidget {
+background: #fff;
+border-radius: 10px
+}</string>
    </property>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -230,6 +233,16 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;</string>
+    </property>
     <property name="text">
      <string>测试</string>
     </property>
@@ -243,6 +256,17 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background: #DB3F3D;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
+    </property>
     <property name="text">
      <string>终止</string>
     </property>
@@ -255,6 +279,17 @@
       <width>130</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
     </property>
     <property name="text">
      <string>清洗</string>

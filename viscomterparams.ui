@@ -16,14 +16,14 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>40</y>
+     <x>390</x>
+     <y>180</y>
      <width>371</width>
      <height>511</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -38,6 +38,17 @@
        <height>111</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
+     </property>
      <property name="text">
       <string>40°C</string>
      </property>
@@ -50,6 +61,17 @@
        <width>131</width>
        <height>111</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
      </property>
      <property name="text">
       <string>50°C</string>
@@ -64,6 +86,17 @@
        <height>111</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
+     </property>
      <property name="text">
       <string>80°C</string>
      </property>
@@ -76,6 +109,17 @@
        <width>131</width>
        <height>111</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
      </property>
      <property name="text">
       <string>100°C</string>
@@ -691,6 +735,17 @@
        <height>51</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
+     </property>
      <property name="text">
       <string>40°C</string>
      </property>
@@ -703,6 +758,17 @@
        <width>61</width>
        <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
      </property>
      <property name="text">
       <string>50°C</string>
@@ -717,6 +783,17 @@
        <height>51</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
+     </property>
      <property name="text">
       <string>80°C</string>
      </property>
@@ -730,23 +807,37 @@
        <height>51</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #005AE7;
+border-radius: 4px;
+font-weight: 800;
+font-size: 16px;
+color: #FFFFFE;
+text-align: center;
+font-style: normal;
+}</string>
+     </property>
      <property name="text">
       <string>100°C</string>
      </property>
     </widget>
    </widget>
   </widget>
-  <widget class="QWidget" name="widget" native="true">
+  <widget class="QWidget" name="boxWidget" native="true">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>10</y>
-     <width>461</width>
+     <x>350</x>
+     <y>150</y>
+     <width>451</width>
      <height>571</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background: #fff;</string>
+    <string notr="true">#boxWidget {
+background: #fff;
+border-radius: 10px;
+}</string>
    </property>
   </widget>
   <widget class="QPushButton" name="backButton">
@@ -765,7 +856,7 @@
     <string>返回</string>
    </property>
   </widget>
-  <zorder>widget</zorder>
+  <zorder>boxWidget</zorder>
   <zorder>tabWidget</zorder>
   <zorder>backButton</zorder>
  </widget>

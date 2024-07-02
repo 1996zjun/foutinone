@@ -21,7 +21,7 @@ QT_BEGIN_NAMESPACE
 class Ui_ViscomterTest
 {
 public:
-    QWidget *widget;
+    QWidget *boxWidget;
     QLabel *label;
     QLineEdit *lineEdit;
     QLabel *label_2;
@@ -51,68 +51,97 @@ public:
         ViscomterTest->resize(1024, 768);
         ViscomterTest->setAutoFillBackground(false);
         ViscomterTest->setStyleSheet(QString::fromUtf8(""));
-        widget = new QWidget(ViscomterTest);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(320, 60, 341, 471));
-        widget->setStyleSheet(QString::fromUtf8("background: #fff;"));
-        label = new QLabel(widget);
+        boxWidget = new QWidget(ViscomterTest);
+        boxWidget->setObjectName(QString::fromUtf8("boxWidget"));
+        boxWidget->setGeometry(QRect(350, 80, 341, 471));
+        boxWidget->setStyleSheet(QString::fromUtf8("#boxWidget {\n"
+"background: #fff;\n"
+"border-radius: 10px\n"
+"}"));
+        label = new QLabel(boxWidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(40, 70, 67, 17));
-        lineEdit = new QLineEdit(widget);
+        lineEdit = new QLineEdit(boxWidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setGeometry(QRect(110, 60, 111, 31));
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(boxWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(40, 120, 67, 17));
-        lineEdit_2 = new QLineEdit(widget);
+        lineEdit_2 = new QLineEdit(boxWidget);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(110, 110, 111, 31));
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(boxWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(40, 170, 67, 17));
-        lineEdit_3 = new QLineEdit(widget);
+        lineEdit_3 = new QLineEdit(boxWidget);
         lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
         lineEdit_3->setGeometry(QRect(110, 160, 111, 31));
-        label_4 = new QLabel(widget);
+        label_4 = new QLabel(boxWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(40, 220, 67, 17));
-        lineEdit_4 = new QLineEdit(widget);
+        lineEdit_4 = new QLineEdit(boxWidget);
         lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
         lineEdit_4->setGeometry(QRect(110, 210, 111, 31));
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(boxWidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(40, 270, 67, 17));
-        lineEdit_5 = new QLineEdit(widget);
+        lineEdit_5 = new QLineEdit(boxWidget);
         lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
         lineEdit_5->setGeometry(QRect(110, 260, 111, 31));
-        label_6 = new QLabel(widget);
+        label_6 = new QLabel(boxWidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(40, 320, 67, 17));
-        lineEdit_6 = new QLineEdit(widget);
+        lineEdit_6 = new QLineEdit(boxWidget);
         lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
         lineEdit_6->setGeometry(QRect(110, 310, 111, 31));
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(boxWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(240, 220, 67, 17));
-        label_8 = new QLabel(widget);
+        label_8 = new QLabel(boxWidget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setGeometry(QRect(240, 170, 67, 17));
-        label_9 = new QLabel(widget);
+        label_9 = new QLabel(boxWidget);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(240, 270, 67, 17));
-        label_10 = new QLabel(widget);
+        label_10 = new QLabel(boxWidget);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(240, 320, 67, 17));
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(boxWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(30, 360, 281, 41));
-        pushButton_2 = new QPushButton(widget);
+        pushButton->setStyleSheet(QString::fromUtf8("\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;"));
+        pushButton_2 = new QPushButton(boxWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(30, 410, 140, 41));
-        pushButton_3 = new QPushButton(widget);
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #DB3F3D;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
+        pushButton_3 = new QPushButton(boxWidget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(180, 410, 130, 41));
-        label_11 = new QLabel(widget);
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
+        label_11 = new QLabel(boxWidget);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(20, 20, 67, 17));
         backButton = new QPushButton(ViscomterTest);

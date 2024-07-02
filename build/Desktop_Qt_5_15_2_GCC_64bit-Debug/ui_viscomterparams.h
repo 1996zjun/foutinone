@@ -87,7 +87,7 @@ public:
     QPushButton *pushButton_6;
     QPushButton *pushButton_7;
     QPushButton *pushButton_8;
-    QWidget *widget;
+    QWidget *boxWidget;
     QPushButton *backButton;
 
     void setupUi(QWidget *ViscomterParams)
@@ -103,15 +103,51 @@ public:
         pushButton = new QPushButton(tab);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(30, 70, 131, 111));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         pushButton_2 = new QPushButton(tab);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(200, 70, 131, 111));
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         pushButton_3 = new QPushButton(tab);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(30, 220, 131, 111));
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         pushButton_4 = new QPushButton(tab);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(200, 220, 131, 111));
+        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         label = new QLabel(tab);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(30, 360, 67, 17));
@@ -280,31 +316,70 @@ public:
         pushButton_5 = new QPushButton(tab_4);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setGeometry(QRect(20, 380, 61, 51));
+        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         pushButton_6 = new QPushButton(tab_4);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         pushButton_6->setGeometry(QRect(90, 380, 61, 51));
+        pushButton_6->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         pushButton_7 = new QPushButton(tab_4);
         pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
         pushButton_7->setGeometry(QRect(160, 380, 61, 51));
+        pushButton_7->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         pushButton_8 = new QPushButton(tab_4);
         pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
         pushButton_8->setGeometry(QRect(230, 380, 61, 51));
+        pushButton_8->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         tabWidget->addTab(tab_4, QString());
-        widget = new QWidget(ViscomterParams);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(240, 10, 461, 571));
-        widget->setStyleSheet(QString::fromUtf8("background: #fff;"));
+        boxWidget = new QWidget(ViscomterParams);
+        boxWidget->setObjectName(QString::fromUtf8("boxWidget"));
+        boxWidget->setGeometry(QRect(240, 10, 461, 571));
+        boxWidget->setStyleSheet(QString::fromUtf8("#boxWidget {\n"
+"background: #fff;\n"
+"border-radius: 10px;\n"
+"}"));
         backButton = new QPushButton(ViscomterParams);
         backButton->setObjectName(QString::fromUtf8("backButton"));
         backButton->setGeometry(QRect(20, 10, 100, 50));
         backButton->setStyleSheet(QString::fromUtf8("QPushButton { background: #FF6347; color: #fff; font-weight: bold; }"));
-        widget->raise();
+        boxWidget->raise();
         tabWidget->raise();
         backButton->raise();
 
         retranslateUi(ViscomterParams);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(ViscomterParams);

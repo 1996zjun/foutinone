@@ -52,6 +52,7 @@ public:
         tabWidget = new QTabWidget(MainWindow);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setGeometry(QRect(210, 20, 741, 521));
+        tabWidget->setStyleSheet(QString::fromUtf8("background: #F2F3F5;"));
         tabWidget->setTabPosition(QTabWidget::North);
         tabWidget->setTabShape(QTabWidget::Rounded);
         tabWidget->setElideMode(Qt::ElideNone);
@@ -130,6 +131,15 @@ public:
         pushButton_5 = new QPushButton(tabCurveData);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setGeometry(QRect(390, 420, 89, 40));
+        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         tabWidget->addTab(tabCurveData, QString());
         tabCurveCorrrection = new QWidget();
         tabCurveCorrrection->setObjectName(QString::fromUtf8("tabCurveCorrrection"));
@@ -206,6 +216,15 @@ public:
         pushButton_6 = new QPushButton(tabCurveCorrrection);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         pushButton_6->setGeometry(QRect(390, 420, 89, 40));
+        pushButton_6->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background: #005AE7;\n"
+"border-radius: 4px;\n"
+"font-weight: 800;\n"
+"font-size: 16px;\n"
+"color: #FFFFFE;\n"
+"text-align: center;\n"
+"font-style: normal;\n"
+"}"));
         tabWidget->addTab(tabCurveCorrrection, QString());
         tabCurveChart = new QWidget();
         tabCurveChart->setObjectName(QString::fromUtf8("tabCurveChart"));
@@ -311,7 +330,8 @@ public:
 "font-style: normal;"));
         logoutButton = new QPushButton(MainWindow);
         logoutButton->setObjectName(QString::fromUtf8("logoutButton"));
-        logoutButton->setGeometry(QRect(50, 510, 101, 31));
+        logoutButton->setGeometry(QRect(50, 500, 81, 41));
+        logoutButton->setStyleSheet(QString::fromUtf8("background: #FF6347; color: #fff; font-weight: bold;"));
         testButton = new QPushButton(MainWindow);
         testButton->setObjectName(QString::fromUtf8("testButton"));
         testButton->setGeometry(QRect(20, 10, 171, 61));
@@ -328,7 +348,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

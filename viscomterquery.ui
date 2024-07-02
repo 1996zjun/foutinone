@@ -6,24 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>860</width>
-    <height>531</height>
+    <width>1024</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="widget" native="true">
+  <widget class="QWidget" name="boxWidget" native="true">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>10</y>
+     <x>350</x>
+     <y>80</y>
      <width>351</width>
      <height>471</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background: #fff;</string>
+    <string notr="true">#boxWidget {
+background: #fff;
+border-radius: 10px
+}</string>
    </property>
    <widget class="QLabel" name="label">
     <property name="geometry">
