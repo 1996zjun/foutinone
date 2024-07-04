@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>红外检测仪</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background: #F1F4F8;</string>

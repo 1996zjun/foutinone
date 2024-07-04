@@ -3,6 +3,7 @@
 StepOne::StepOne(QWidget *parent) : QWidget(parent)
 {
     setFixedSize(1024, 768);  // 设置窗口固定大小
+    setWindowTitle("主界面");
 
     // 加载背景图片
     QImage image(":/images/bg.png");  // 请将 "your_image.jpg" 替换为实际的图片文件名
@@ -71,7 +72,7 @@ void StepOne::on_button2_clicked()
 
 void StepOne::on_button3_clicked()
 {
-    QMessageBox::information(this, "提示", "您点击了 X 荧光检测按钮");
+    QMessageBox::information(this, "提示", "X荧光检测暂未开放");
 }
 
 #include "mainwindow.h"
@@ -82,12 +83,16 @@ void StepOne::on_button4_clicked()
     this->close();
 }
 
+#include "historyrecords.h"
 void StepOne::on_historyBtn_clicked()
 {
-    QMessageBox::information(this, "提示", "您点击了历史记录");
+    // QMessageBox::information(this, "提示", "您点击了历史记录");
+    HistoryRecords *he = new HistoryRecords();
+    he->show();
+    this->close();
 }
 
 void StepOne::on_systemBtn_clicked()
 {
-    QMessageBox::information(this, "提示", "您点击了系统设置");
+    QMessageBox::information(this, "提示", "系统设置暂未开放");
 }

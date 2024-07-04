@@ -11,6 +11,7 @@ CONFIG += c++17
 
 SOURCES += \
     StepOne.cpp \
+    historyrecords.cpp \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -19,11 +20,11 @@ SOURCES += \
     particlecountertest.cpp \
     viscomtermodule.cpp \
     viscomterparams.cpp \
-    viscomterquery.cpp \
     viscomtertest.cpp
 
 HEADERS += \
     StepOne.h \
+    historyrecords.h \
     loginwindow.h \
     mainwindow.h \
     particlecountermodule.h \
@@ -31,16 +32,15 @@ HEADERS += \
     particlecountertest.h \
     viscomtermodule.h \
     viscomterparams.h \
-    viscomterquery.h \
     viscomtertest.h
 
 FORMS += \
+    historyrecords.ui \
     loginwindow.ui \
     mainwindow.ui \
     particlecounterparams.ui \
     particlecountertest.ui \
     viscomterparams.ui \
-    viscomterquery.ui \
     viscomtertest.ui
 
 # Default rules for deployment.

@@ -6,6 +6,8 @@
 #include "viscomterparams.h"
 #include "particlecounterparams.h"
 #include "particlecountertest.h"
+#include "historyrecords.h"
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -21,5 +23,8 @@ int main(int argc, char *argv[])
 
     // ParticleCounterTest w;
     // w.show();
+
+    // HistoryRecords h;
+    // h.show();
     return a.exec();
 }

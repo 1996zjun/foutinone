@@ -14,6 +14,7 @@
 ViscomterModule::ViscomterModule(QWidget *parent) : QWidget(parent)
 {
     setFixedSize(1024, 768);
+    setWindowTitle("粘度仪功能");
 
     QImage image(":/images/bg.png");
     QPixmap pixmap = QPixmap::fromImage(image);
@@ -35,7 +36,7 @@ ViscomterModule::ViscomterModule(QWidget *parent) : QWidget(parent)
     topLayout->addWidget(backButton);
     topLayout->addStretch();
 
-    QLabel *titleLabel = new QLabel("粘度仪模块");
+    QLabel *titleLabel = new QLabel("粘度仪功能");
     QFont titleFont;
     titleFont.setBold(true);
     titleFont.setPointSize(30);

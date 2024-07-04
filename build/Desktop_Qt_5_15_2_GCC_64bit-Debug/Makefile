@@ -53,6 +53,7 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../../StepOne.cpp \
+		../../historyrecords.cpp \
 		../../loginwindow.cpp \
 		../../main.cpp \
 		../../mainwindow.cpp \
@@ -61,9 +62,9 @@ SOURCES       = ../../StepOne.cpp \
 		../../particlecountertest.cpp \
 		../../viscomtermodule.cpp \
 		../../viscomterparams.cpp \
-		../../viscomterquery.cpp \
 		../../viscomtertest.cpp qrc_images.cpp \
 		moc_StepOne.cpp \
+		moc_historyrecords.cpp \
 		moc_loginwindow.cpp \
 		moc_mainwindow.cpp \
 		moc_particlecountermodule.cpp \
@@ -71,9 +72,9 @@ SOURCES       = ../../StepOne.cpp \
 		moc_particlecountertest.cpp \
 		moc_viscomtermodule.cpp \
 		moc_viscomterparams.cpp \
-		moc_viscomterquery.cpp \
 		moc_viscomtertest.cpp
 OBJECTS       = StepOne.o \
+		historyrecords.o \
 		loginwindow.o \
 		main.o \
 		mainwindow.o \
@@ -82,10 +83,10 @@ OBJECTS       = StepOne.o \
 		particlecountertest.o \
 		viscomtermodule.o \
 		viscomterparams.o \
-		viscomterquery.o \
 		viscomtertest.o \
 		qrc_images.o \
 		moc_StepOne.o \
+		moc_historyrecords.o \
 		moc_loginwindow.o \
 		moc_mainwindow.o \
 		moc_particlecountermodule.o \
@@ -93,7 +94,6 @@ OBJECTS       = StepOne.o \
 		moc_particlecountertest.o \
 		moc_viscomtermodule.o \
 		moc_viscomterparams.o \
-		moc_viscomterquery.o \
 		moc_viscomtertest.o
 DIST          = /home/qt_5_15/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/common/unix.conf \
@@ -276,6 +276,7 @@ DIST          = /home/qt_5_15/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/features/yacc.prf \
 		/home/qt_5_15/5.15.2/gcc_64/mkspecs/features/lex.prf \
 		../../../../foutInOne.pro ../../StepOne.h \
+		../../historyrecords.h \
 		../../loginwindow.h \
 		../../mainwindow.h \
 		../../particlecountermodule.h \
@@ -283,8 +284,8 @@ DIST          = /home/qt_5_15/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../particlecountertest.h \
 		../../viscomtermodule.h \
 		../../viscomterparams.h \
-		../../viscomterquery.h \
 		../../viscomtertest.h ../../StepOne.cpp \
+		../../historyrecords.cpp \
 		../../loginwindow.cpp \
 		../../main.cpp \
 		../../mainwindow.cpp \
@@ -293,7 +294,6 @@ DIST          = /home/qt_5_15/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../particlecountertest.cpp \
 		../../viscomtermodule.cpp \
 		../../viscomterparams.cpp \
-		../../viscomterquery.cpp \
 		../../viscomtertest.cpp
 QMAKE_TARGET  = foutInOne
 DESTDIR       = 
@@ -303,7 +303,7 @@ TARGET        = foutInOne
 first: all
 ####### Build rules
 
-foutInOne: ui_loginwindow.h ui_mainwindow.h ui_particlecounterparams.h ui_particlecountertest.h ui_viscomterparams.h ui_viscomterquery.h ui_viscomtertest.h $(OBJECTS)  
+foutInOne: ui_historyrecords.h ui_loginwindow.h ui_mainwindow.h ui_particlecounterparams.h ui_particlecountertest.h ui_viscomterparams.h ui_viscomtertest.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../../foutInOne.pro ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
@@ -687,9 +687,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../images.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../StepOne.h ../../loginwindow.h ../../mainwindow.h ../../particlecountermodule.h ../../particlecounterparams.h ../../particlecountertest.h ../../viscomtermodule.h ../../viscomterparams.h ../../viscomterquery.h ../../viscomtertest.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../StepOne.cpp ../../loginwindow.cpp ../../main.cpp ../../mainwindow.cpp ../../particlecountermodule.cpp ../../particlecounterparams.cpp ../../particlecountertest.cpp ../../viscomtermodule.cpp ../../viscomterparams.cpp ../../viscomterquery.cpp ../../viscomtertest.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../loginwindow.ui ../../mainwindow.ui ../../particlecounterparams.ui ../../particlecountertest.ui ../../viscomterparams.ui ../../viscomterquery.ui ../../viscomtertest.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../../StepOne.h ../../historyrecords.h ../../loginwindow.h ../../mainwindow.h ../../particlecountermodule.h ../../particlecounterparams.h ../../particlecountertest.h ../../viscomtermodule.h ../../viscomterparams.h ../../viscomtertest.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../StepOne.cpp ../../historyrecords.cpp ../../loginwindow.cpp ../../main.cpp ../../mainwindow.cpp ../../particlecountermodule.cpp ../../particlecounterparams.cpp ../../particlecountertest.cpp ../../viscomtermodule.cpp ../../viscomterparams.cpp ../../viscomtertest.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../historyrecords.ui ../../loginwindow.ui ../../mainwindow.ui ../../particlecounterparams.ui ../../particlecountertest.ui ../../viscomterparams.ui ../../viscomtertest.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -727,9 +727,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/features/data/dummy.cpp
 	clang++ -pipe -g -std=gnu++1z -Wall -Wextra -dM -E -o moc_predefs.h ../../../../qt_5_15/5.15.2/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_StepOne.cpp moc_loginwindow.cpp moc_mainwindow.cpp moc_particlecountermodule.cpp moc_particlecounterparams.cpp moc_particlecountertest.cpp moc_viscomtermodule.cpp moc_viscomterparams.cpp moc_viscomterquery.cpp moc_viscomtertest.cpp
+compiler_moc_header_make_all: moc_StepOne.cpp moc_historyrecords.cpp moc_loginwindow.cpp moc_mainwindow.cpp moc_particlecountermodule.cpp moc_particlecounterparams.cpp moc_particlecountertest.cpp moc_viscomtermodule.cpp moc_viscomterparams.cpp moc_viscomtertest.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_StepOne.cpp moc_loginwindow.cpp moc_mainwindow.cpp moc_particlecountermodule.cpp moc_particlecounterparams.cpp moc_particlecountertest.cpp moc_viscomtermodule.cpp moc_viscomterparams.cpp moc_viscomterquery.cpp moc_viscomtertest.cpp
+	-$(DEL_FILE) moc_StepOne.cpp moc_historyrecords.cpp moc_loginwindow.cpp moc_mainwindow.cpp moc_particlecountermodule.cpp moc_particlecounterparams.cpp moc_particlecountertest.cpp moc_viscomtermodule.cpp moc_viscomterparams.cpp moc_viscomtertest.cpp
 moc_StepOne.cpp: ../../StepOne.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
@@ -851,6 +851,118 @@ moc_StepOne.cpp: ../../StepOne.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
 	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../StepOne.h -o moc_StepOne.cpp
+
+moc_historyrecords.cpp: ../../historyrecords.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtguiglobal.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qglobal.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qconfig.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtcore-config.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsysinfo.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlogging.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qflags.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmutex.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qnumeric.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qversiontagging.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtgui-config.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qnamespace.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobject.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstring.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qchar.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbytearray.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qrefcount.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qarraydata.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringliteral.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlist.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qalgorithms.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qiterator.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qpair.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvector.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qpoint.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringlist.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qregexp.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcoreevent.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmetatype.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmargins.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qrect.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsize.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpalette.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qcolor.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qrgb.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qrgba64.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qbrush.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qmatrix.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpolygon.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qregion.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qdatastream.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qiodevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qline.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtransform.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qimage.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpixmap.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qshareddata.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qhash.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfont.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qcursor.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qkeysequence.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qevent.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvariant.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmap.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qdebug.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtextstream.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlocale.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qset.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qurl.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qurlquery.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfile.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
+		moc_predefs.h \
+		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../historyrecords.h -o moc_historyrecords.cpp
 
 moc_loginwindow.cpp: ../../loginwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -1111,6 +1223,15 @@ moc_mainwindow.cpp: ../../mainwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlineseries.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QXYSeries \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qxyseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
 	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../mainwindow.h -o moc_mainwindow.cpp
@@ -1219,20 +1340,10 @@ moc_particlecountermodule.cpp: ../../particlecountermodule.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QImage \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPixmap \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
 	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../particlecountermodule.h -o moc_particlecountermodule.cpp
@@ -1341,6 +1452,10 @@ moc_particlecounterparams.cpp: ../../particlecounterparams.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
 	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../particlecounterparams.h -o moc_particlecounterparams.cpp
@@ -1449,6 +1564,10 @@ moc_particlecountertest.cpp: ../../particlecountertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
 	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../particlecountertest.h -o moc_particlecountertest.cpp
@@ -1557,20 +1676,10 @@ moc_viscomtermodule.cpp: ../../viscomtermodule.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QImage \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPixmap \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
 	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomtermodule.h -o moc_viscomtermodule.cpp
@@ -1679,117 +1788,13 @@ moc_viscomterparams.cpp: ../../viscomterparams.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
 	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomterparams.h -o moc_viscomterparams.cpp
-
-moc_viscomterquery.cpp: ../../viscomterquery.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtguiglobal.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qglobal.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qconfig.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtcore-config.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsystemdetection.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qprocessordetection.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcompilerdetection.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtypeinfo.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsysinfo.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlogging.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qflags.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbasicatomic.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qgenericatomic.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_cxx11.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_msvc.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qglobalstatic.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmutex.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qnumeric.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qversiontagging.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtgui-config.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobjectdefs.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qnamespace.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobject.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstring.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qchar.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbytearray.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qrefcount.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qarraydata.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringliteral.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringalgorithms.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringview.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringbuilder.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlist.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qalgorithms.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qiterator.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qhashfunctions.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qpair.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvector.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontainertools_impl.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qpoint.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbytearraylist.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringlist.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qregexp.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringmatcher.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcoreevent.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qscopedpointer.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmetatype.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmargins.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qrect.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsize.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpalette.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qcolor.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qrgb.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qrgba64.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qbrush.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qmatrix.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpolygon.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qregion.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qdatastream.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qiodevice.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qline.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtransform.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qimage.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpixmap.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qshareddata.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qhash.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfont.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qsizepolicy.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qcursor.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qkeysequence.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qevent.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvariant.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmap.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qdebug.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtextstream.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlocale.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qset.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qurl.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qurlquery.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfile.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
-		moc_predefs.h \
-		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomterquery.h -o moc_viscomterquery.cpp
 
 moc_viscomtertest.cpp: ../../viscomtertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1895,6 +1900,10 @@ moc_viscomtertest.cpp: ../../viscomtertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
 		moc_predefs.h \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/moc
 	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/ubuntu/qt/project_data/fourInOne/build/Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/mkspecs/linux-clang -I/home/ubuntu/qt/project_data/fourInOne -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCharts -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtWidgets -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtGui -I/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/llvm-14/lib/clang/14.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../viscomtertest.h -o moc_viscomtertest.cpp
@@ -1903,9 +1912,13 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_loginwindow.h ui_mainwindow.h ui_particlecounterparams.h ui_particlecountertest.h ui_viscomterparams.h ui_viscomterquery.h ui_viscomtertest.h
+compiler_uic_make_all: ui_historyrecords.h ui_loginwindow.h ui_mainwindow.h ui_particlecounterparams.h ui_particlecountertest.h ui_viscomterparams.h ui_viscomtertest.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_loginwindow.h ui_mainwindow.h ui_particlecounterparams.h ui_particlecountertest.h ui_viscomterparams.h ui_viscomterquery.h ui_viscomtertest.h
+	-$(DEL_FILE) ui_historyrecords.h ui_loginwindow.h ui_mainwindow.h ui_particlecounterparams.h ui_particlecountertest.h ui_viscomterparams.h ui_viscomtertest.h
+ui_historyrecords.h: ../../historyrecords.ui \
+		../../../../qt_5_15/5.15.2/gcc_64/bin/uic
+	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/uic ../../historyrecords.ui -o ui_historyrecords.h
+
 ui_loginwindow.h: ../../loginwindow.ui \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/uic
 	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/uic ../../loginwindow.ui -o ui_loginwindow.h
@@ -1925,10 +1938,6 @@ ui_particlecountertest.h: ../../particlecountertest.ui \
 ui_viscomterparams.h: ../../viscomterparams.ui \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/uic
 	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/uic ../../viscomterparams.ui -o ui_viscomterparams.h
-
-ui_viscomterquery.h: ../../viscomterquery.ui \
-		../../../../qt_5_15/5.15.2/gcc_64/bin/uic
-	/home/ubuntu/qt/qt_5_15/5.15.2/gcc_64/bin/uic ../../viscomterquery.ui -o ui_viscomterquery.h
 
 ui_viscomtertest.h: ../../viscomtertest.ui \
 		../../../../qt_5_15/5.15.2/gcc_64/bin/uic
@@ -2063,9 +2072,6 @@ StepOne.o: ../../StepOne.cpp ../../StepOne.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		../../viscomtermodule.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
 		../../particlecountermodule.h \
 		../../mainwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -2102,12 +2108,158 @@ StepOne.o: ../../StepOne.cpp ../../StepOne.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qscrollarea.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QLineSeries \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlineseries.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QXYSeries \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qxyseries.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qxyseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o StepOne.o ../../StepOne.cpp
+
+historyrecords.o: ../../historyrecords.cpp ../../historyrecords.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtguiglobal.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qglobal.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qconfig.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtcore-config.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsysinfo.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlogging.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qflags.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmutex.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qnumeric.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qversiontagging.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtgui-config.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qnamespace.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobject.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstring.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qchar.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbytearray.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qrefcount.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qarraydata.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringliteral.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringview.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlist.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qalgorithms.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qiterator.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qpair.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvector.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qpoint.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringlist.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qregexp.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcoreevent.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmetatype.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmargins.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qrect.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsize.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpalette.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qcolor.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qrgb.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qrgba64.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qbrush.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qmatrix.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpolygon.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qregion.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qdatastream.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qiodevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qline.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtransform.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qimage.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpixmap.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qshareddata.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qhash.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfont.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qcursor.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qkeysequence.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qevent.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvariant.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmap.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qdebug.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtextstream.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlocale.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qset.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qurl.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qurlquery.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfile.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
+		ui_historyrecords.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QVariant \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QIcon \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QApplication \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qeventloop.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qinputmethod.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextcursor.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextformat.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QStackedWidget \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qstackedwidget.h \
+		../../StepOne.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QImage \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPixmap \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o historyrecords.o ../../historyrecords.cpp
 
 loginwindow.o: ../../loginwindow.cpp ../../loginwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -2408,27 +2560,25 @@ main.o: ../../main.cpp ../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QAppl
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
 		../../viscomtermodule.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../particlecountermodule.h \
+		../../StepOne.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QImage \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPixmap \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
-		../../particlecountermodule.h \
-		../../StepOne.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		../../viscomterparams.h \
 		../../particlecounterparams.h \
-		../../particlecountertest.h
+		../../particlecountertest.h \
+		../../historyrecords.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
 
 mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
@@ -2575,6 +2725,15 @@ mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qlineseries.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/QXYSeries \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCharts/qxyseries.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
 		ui_mainwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QApplication \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qapplication.h \
@@ -2600,14 +2759,14 @@ mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qrubberband.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QTableWidget \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtablewidget.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtableview.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
+		../../StepOne.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QImage \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPixmap \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h
@@ -2717,26 +2876,34 @@ particlecountermodule.o: ../../particlecountermodule.cpp ../../particlecountermo
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
+		../../particlecountertest.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
+		../../particlecounterparams.h \
+		../../StepOne.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QImage \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPixmap \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
-		../../particlecountertest.h \
-		../../particlecounterparams.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPalette \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QBrush \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QFont
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o particlecountermodule.o ../../particlecountermodule.cpp
 
 particlecounterparams.o: ../../particlecounterparams.cpp ../../particlecounterparams.h \
@@ -2843,6 +3010,10 @@ particlecounterparams.o: ../../particlecounterparams.cpp ../../particlecounterpa
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
 		ui_particlecounterparams.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QVariant \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QApplication \
@@ -2859,12 +3030,11 @@ particlecounterparams.o: ../../particlecounterparams.cpp ../../particlecounterpa
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlineedit.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextcursor.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextformat.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
+		../../particlecountermodule.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o particlecounterparams.o ../../particlecounterparams.cpp
 
 particlecountertest.o: ../../particlecountertest.cpp ../../particlecountertest.h \
@@ -2971,6 +3141,10 @@ particlecountertest.o: ../../particlecountertest.cpp ../../particlecountertest.h
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
 		ui_particlecountertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QVariant \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QApplication \
@@ -2987,7 +3161,8 @@ particlecountertest.o: ../../particlecountertest.cpp ../../particlecountertest.h
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
+		../../particlecountermodule.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o particlecountertest.o ../../particlecountertest.cpp
 
 viscomtermodule.o: ../../viscomtermodule.cpp ../../viscomtermodule.h \
@@ -3094,26 +3269,34 @@ viscomtermodule.o: ../../viscomtermodule.cpp ../../viscomtermodule.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
+		../../viscomtertest.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
+		../../viscomterparams.h \
+		../../StepOne.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QImage \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPixmap \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
-		../../viscomtertest.h \
-		../../viscomterparams.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPalette \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QBrush \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QFont
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viscomtermodule.o ../../viscomtermodule.cpp
 
 viscomterparams.o: ../../viscomterparams.cpp ../../viscomterparams.h \
@@ -3220,6 +3403,10 @@ viscomterparams.o: ../../viscomterparams.cpp ../../viscomterparams.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
 		ui_viscomterparams.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QVariant \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QApplication \
@@ -3236,144 +3423,14 @@ viscomterparams.o: ../../viscomterparams.cpp ../../viscomterparams.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlineedit.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextcursor.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextformat.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtabwidget.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../viscomtermodule.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viscomterparams.o ../../viscomterparams.cpp
-
-viscomterquery.o: ../../viscomterquery.cpp ../../viscomterquery.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtguiglobal.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qglobal.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qconfig.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtcore-config.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsystemdetection.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qprocessordetection.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcompilerdetection.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtypeinfo.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsysinfo.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlogging.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qflags.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbasicatomic.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qgenericatomic.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_cxx11.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qatomic_msvc.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qglobalstatic.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmutex.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qnumeric.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qversiontagging.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtgui-config.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobjectdefs.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qnamespace.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobject.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstring.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qchar.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbytearray.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qrefcount.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qarraydata.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringliteral.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringalgorithms.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringview.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringbuilder.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlist.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qalgorithms.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qiterator.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qhashfunctions.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qpair.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvector.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontainertools_impl.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qpoint.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qbytearraylist.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringlist.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qregexp.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qstringmatcher.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcoreevent.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qscopedpointer.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmetatype.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmargins.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qrect.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsize.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpalette.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qcolor.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qrgb.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qrgba64.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qbrush.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qmatrix.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpolygon.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qregion.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qdatastream.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qiodevice.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qline.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtransform.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qimage.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpixmap.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qshareddata.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qhash.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfont.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qsizepolicy.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qcursor.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qkeysequence.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qevent.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qvariant.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qmap.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qdebug.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qtextstream.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qlocale.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qset.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qurl.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qurlquery.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfile.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_viscomterquery.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QVariant \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QIcon \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QApplication \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qapplication.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qeventloop.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qinputmethod.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLabel \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qframe.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlineedit.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextcursor.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextformat.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viscomterquery.o ../../viscomterquery.cpp
 
 viscomtertest.o: ../../viscomtertest.cpp ../../viscomtertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -3479,6 +3536,10 @@ viscomtertest.o: ../../viscomtertest.cpp ../../viscomtertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/QPainter \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpainter.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
 		ui_viscomtertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtCore/QVariant \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QApplication \
@@ -3495,12 +3556,11 @@ viscomtertest.o: ../../viscomtertest.cpp ../../viscomtertest.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qlineedit.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextcursor.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextformat.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qpen.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qtextoption.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/QPushButton \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../../qt_5_15/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h
+		../../../../qt_5_15/5.15.2/gcc_64/include/QtGui/qicon.h \
+		../../viscomtermodule.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viscomtertest.o ../../viscomtertest.cpp
 
 qrc_images.o: qrc_images.cpp 
@@ -3508,6 +3568,9 @@ qrc_images.o: qrc_images.cpp
 
 moc_StepOne.o: moc_StepOne.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_StepOne.o moc_StepOne.cpp
+
+moc_historyrecords.o: moc_historyrecords.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_historyrecords.o moc_historyrecords.cpp
 
 moc_loginwindow.o: moc_loginwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_loginwindow.o moc_loginwindow.cpp
@@ -3529,9 +3592,6 @@ moc_viscomtermodule.o: moc_viscomtermodule.cpp
 
 moc_viscomterparams.o: moc_viscomterparams.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_viscomterparams.o moc_viscomterparams.cpp
-
-moc_viscomterquery.o: moc_viscomterquery.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_viscomterquery.o moc_viscomterquery.cpp
 
 moc_viscomtertest.o: moc_viscomtertest.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_viscomtertest.o moc_viscomtertest.cpp

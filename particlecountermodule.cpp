@@ -14,6 +14,7 @@
 ParticleCounterModule::ParticleCounterModule(QWidget *parent) : QWidget(parent)
 {
     setFixedSize(1024, 768);
+    setWindowTitle("颗粒计数器");
 
     QImage image(":/images/bg.png");
     QPixmap pixmap = QPixmap::fromImage(image);
